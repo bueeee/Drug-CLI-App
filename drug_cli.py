@@ -25,19 +25,27 @@ class DrugCLI:
     def run(self):
         """Run the main CLI loop."""
         print("Welcome to the Drug Lookup CLI!")
-        drug_name = input("Please enter a drug name to look up: ").strip()
-        print(f"\\nLooking up information for '{drug_name}'...\\n")
 
-        # Fetch drug data from OpenFDA API
-        response = self.get_drug_info(drug_name)
+        while True:
+            # Get user input and show example input prompt
+            drug_name = input("Please enter a drug name to look up (e.g., 'aspirin') or type 'exit' to quit: ").strip()
+            
+            if drug_name.lower() == "exit":
+                print("Exiting the Drug Lookup CLI. Goodbye!")
+                break  # Exit the loop if the user types "exit"
 
-        if response:
-            # Parse the response and create a Drug object
-            drug = FDAResponseParser.parse_response(response)
-            if drug:
-                # Display the drug information
-                drug.display_info()
+            print(f"\nLooking up information for '{drug_name}'...\n")
+
+            # Fetch drug data from OpenFDA API
+            response = self.get_drug_info(drug_name)
+
+            if response:
+                # Parse the response and create a Drug object
+                drug = FDAResponseParser.parse_response(response)
+                if drug:
+                    # Display the drug information
+                    drug.display_info()
+                else:
+                    print("No valid drug information found.")
             else:
-                print("No valid drug information found.")
-        else:
-            print("Unable to retrieve drug information at this time.")
+                print("Unable to retrieve drug information at this time.")
