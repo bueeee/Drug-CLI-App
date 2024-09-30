@@ -31,7 +31,7 @@ The project uses the `requests` library, which is licensed under the Apache Lice
 Navigate to the folder where you want to store the project and run the following commands:
 
 ```bash
-git clone <repository_link>
+git clone https://github.com/bueeee/Drug-CLI-App.git
 cd drug_lookup_cli
 ```
 
@@ -113,7 +113,3 @@ The app implements error handling for the following scenarios:
 ## License
 This project is licensed under the MIT License. By using the OpenFDA API, you agree to adhere to its terms of service and ethical guidelines.
 
-## Contact Information
-For further questions or to report issues, please reach out to the project maintainers or open a ticket on the repository.
-
-Let me know if you'd like to expand on any sections or require additional features!
