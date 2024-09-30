@@ -1,0 +1,15 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment folder
+env/
+
+# Ignore system-specific files
+.DS_Store
+*.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
